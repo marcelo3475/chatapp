@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+//import '../functions/toChatRoom'
+
 import '../signin.css'
 
 export class Home extends Component {
@@ -36,7 +38,7 @@ export class Home extends Component {
                   <input style={{ marginBottom:'10px'}} type='checkbox' role='switch' id='remember' name='remember'></input>
                   <label style={{ marginBottom:'10px', textAlign:'center'}} for='remember'>Remember me</label>
                   
-                  <button type='submit' onclick='event.preventDefault()'>Login</button>
+                  <button type='submit' id='toChatRoom'>Login</button>
                 </fieldset>
               </form>
             </div>
