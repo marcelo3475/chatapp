@@ -46,6 +46,11 @@ export class Home extends Component {
           </article>
         
         </main>
+        <footer>
+          <ul>
+            <small>Developed by <a href='https://www.twitter.com/marcelo69420'>@marcelo6942</a> • and <a href='https://picocss.com/'>Picocss</a></small>
+          </ul>
+        </footer>
       </div>
     )
   }
