@@ -1,10 +1,19 @@
-import React, { Component } from 'react'
-//import '../functions/toChatRoom'
-
 import '../signin.css'
+import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png"
+import {  auth  } from "../firebase"
+import {  useAuthState  } from "react-firebase-hooks/auth"
+import {  GoogleAuthProvider, signInWithRedirect  } from "firebase/auth"
 
-export class Home extends Component {
-  render() {
+
+const Home = () => {
+  const [user] = useAuthState(auth)
+  const googleSignIn = () =>{
+    const provider = new GoogleAuthProvider()
+    signInWithRedirect(auth, provider)
+  }
+  const signOut = () => {
+    auth.signOut()
+  }
     return(
       <div class='container'>
         <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"></link>
@@ -31,7 +40,7 @@ export class Home extends Component {
                 <h2>Login page</h2>
               </hgroup>
               <form>
-                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required></input>
+                <input type="text" name="login" placeholder="User name" aria-label="Login" autocomplete="nickname" required></input>
                 <input type='password'  name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required></input>
                 <fieldset>
                   
@@ -41,6 +50,13 @@ export class Home extends Component {
                   <button type='submit' id='toChatRoom'>Login</button>
                 </fieldset>
               </form>
+                  {user ? (<button onclick={signOut} className="sign-out" type="button">Sign Out</button>):(<button className='sign-in'><img
+                  onclick={googleSignIn}
+                  src={GoogleSignin}
+                  alt='sign in with google'
+                  type="button"
+                  />
+                  </button>)}
             </div>
             <div></div>
           </article>
@@ -54,6 +70,6 @@ export class Home extends Component {
       </div>
     )
   }
-};
+;
 
 export default Home
