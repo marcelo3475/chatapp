@@ -45,9 +45,9 @@ const Home = () => {
                 <fieldset>
                   
                   <input style={{ marginBottom:'10px'}} type='checkbox' role='switch' id='remember' name='remember'></input>
-                  <label style={{ marginBottom:'10px', textAlign:'center'}} for='remember'>Remember me</label>
+                  <label style={{ marginBottom:'-10px'}} for='remember'>Remember me</label><br />
                   
-                  <button type='submit' id='toChatRoom'>Login</button>
+                  <button type='submit' id='toChatRoom'style={{ marginBottom:'-15px'}}>Login</button>
                 </fieldset>
               </form>
                   {user ? (<button onclick={signOut} className="sign-out" type="button">Sign Out</button>):(<button className='sign-in'><img
@@ -57,6 +57,8 @@ const Home = () => {
                   type="button"
                   />
                   </button>)}
+                  <label style={{ marginBottom:'10px',textAlign:'left'}} for='forgot-password'>Forgot password?</label>
+                  <label style={{ marginBottom:'10px',textAlign:'left' }} for='signUp'>Sign Up</label>
             </div>
             <div></div>
           </article>
