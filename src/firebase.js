@@ -2,15 +2,19 @@ import { initializeApp } from "firebase/app";
 import {  getAuth } from "firebase/auth"
 import {  getFirestore  } from "firebase/firestore"
 
+
+console.log(process.env.FIREBASE_CONFIG)
+const firebaseConfig = (process.env.FIREBASE_CONFIG)
+
 // Your web app's Firebase configuration
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyDpGKBog7ItOWSOKZA8NeFSoGSEq3XUqJU",
-    authDomain: process.env.AUTH_DOMAIN,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDERID,
-    appId: process.env.APP_ID,
-};
+    authDomain: "anoterchat.firebaseapp.com",
+    projectId: "anoterchat",
+    storageBucket: "anoterchat.appspot.com",
+    messagingSenderId: "705896919212",
+    appId: "1:705896919212:web:5250d9cba1d57ec28caf09"
+};*/
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
