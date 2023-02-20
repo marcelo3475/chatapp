@@ -11,7 +11,7 @@ const provider = new GoogleAuthProvider();
 };
 
 return (
-    <main className="welcome">
+    <div className="welcome">
         <button className="sign-in">
         <img
         onClick={googleSignIn}
@@ -20,7 +20,7 @@ return (
         type="button"
         />
         </button>
-    </main>
+    </div>
     );
 };
 

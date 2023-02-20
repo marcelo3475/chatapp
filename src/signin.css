@@ -16,6 +16,7 @@ article div {
   padding: 1rem;
 }
 
+
 @media (min-width: 576px) {
   body > main {
     padding: 1.25rem 0;

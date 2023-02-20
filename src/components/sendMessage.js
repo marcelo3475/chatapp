@@ -1,6 +1,6 @@
 import React, { useState  } from "react";
 import {auth, db} from "../firebase"
-import {addDoc, collection, serverTimeStamp} from "firebase/firestore"
+import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 
 const SendMessage = async(event) => {
@@ -14,7 +14,7 @@ const SendMessage = async(event) => {
     text: message,
     name: displayName,
     avatar: photoUrl,
-    createdAt: serverTimeStamp,
+    createdAt: serverTimestamp,
     uid,
   })
   setMessage("")
