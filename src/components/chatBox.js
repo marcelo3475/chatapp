@@ -33,6 +33,9 @@ const ChatBox = () => {
 
   return (
     <main className="chat-box">
+      <link rel="stylesheet"
+        href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+      </link>
       <div className="messages-wrapper">
         {messages?.map((message) => (
           <Message key={message.id} message={message} />

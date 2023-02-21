@@ -3,39 +3,51 @@ import {auth, db} from "../firebase"
 import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 
-const SendMessage = async(event) => {
+const SendMessage = ({scroll})=> {
   const [message, setMessage] = useState("")
-  event.preventDefault()
-  if (message.trim() === ""){
-    alert("You must write a message")  
-  }
-  const {uid, displayName, photoUrl} = auth.currentUser
+  const sendMessage = async (event) =>{
+    event.preventDefault()
+    if (message.trim() === "" ){
+
+      alert("enter valid message")
+
+      return 
+    }
+  const {uid, displayName, photoURL} = auth.currentUser
   await addDoc(collection(db, "messages"), {
     text: message,
     name: displayName,
-    avatar: photoUrl,
-    createdAt: serverTimestamp,
+    avatar: photoURL,
+    createdAt:  serverTimestamp(),
     uid,
   })
-  setMessage("")
-  
-    return (
-        <form className="Send-Message">
-            <label htmlFor="messageInput" hidden>
-            Enter Message
-            </label>
-            <input
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            id="messageInput"
-            name="messageInput"
-            type="text"
-            className="form-input__input"
-            placeholder="type a message..."
-            />
-            <button type="submit">Send</button>
-        </form>
-    )
+  setMessage('')
+  scroll.current.scroll({behavior:"smooth"})
+}
+  return (
+    <form onSubmit={(event) => sendMessage(event)} className="send-message">
+
+      <label htmlFor="messageInput" hidden>
+      Enter Message
+      </label>
+
+      <div class="container-fluid">
+
+      <input
+      id="messageInput"
+      name="messageInput"
+      type="text"
+      className="form-input__input"
+      placeholder="type message..."
+      value={message}
+      onChange={(e)=> setMessage(e.target.value)}
+      />
+      <button href="/#" type="submit">
+        Send</button>
+
+      </div>
+    </form>
+  )
 }
 
 export default SendMessage

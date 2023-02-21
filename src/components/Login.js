@@ -1,15 +1,15 @@
 import "../../src/signin.css";
 import About from "./about";
 
-
 const Home = () => {
+
   return (
     <div class="container">
       <link
         rel="stylesheet"
         href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
       ></link>
-      <nav class="container-fluid" style={{marginBottom:"2rem"}}>
+      <nav class="container-fluid" style={{marginTop:"-3.5rem"}}>
         <ul>
           <li>
             <a href="./About" onClick={About}>
@@ -24,19 +24,19 @@ const Home = () => {
             </summary>
             <ul role="listbox">
               <li>
-                <button href="/src/functions/ThemeSwitch.js" data-theme-switcher="auto">
+                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="auto">
                   Auto
-                </button>
+                </a>
               </li>
               <li>
-                <button href="/src/functions/ThemeSwitch.js" data-theme-switcher="light">
+                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="light">
                   Light
-                </button>
+                </a>
               </li>
               <li>
-                <button href="/src/functions/ThemeSwitch.js" data-theme-switcher="dark">
+                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="dark">
                   Dark
-                </button>
+                </a>
               </li>
             </ul>
           </details>
@@ -51,9 +51,9 @@ const Home = () => {
             </hgroup>
             <form>
               <input
-                type="text"
+                type="email"
                 name="login"
-                placeholder="User name"
+                placeholder="Email please"
                 aria-label="Login"
                 autocomplete="nickname"
                 required
@@ -80,27 +80,23 @@ const Home = () => {
                 <br />
 
                 <button
+                  class='outline'
                   type="submit"
                   id="toChatRoom"
                   style={{ marginBottom: "-15px" }}
                 >
                   Login
                 </button>
+
               </fieldset>
             </form>
 
 
-            <label
-              style={{ marginBottom: "10px", textAlign: "left" }}
-              for="forgot-password"
-            >
-              Forgot password?
+            <label style={{ marginBottom: "10px", textAlign: "left" }} for="forgot-password">
+              <a href="/#">Forget password?</a>
             </label>
-            <label
-              style={{ marginBottom: "10px", textAlign: "left" }}
-              for="signUp"
-            >
-              Sign Up
+            <label style={{ marginBottom: "10px", textAlign: "left" }} for="signUp">
+              <a href="/#">Sign Up</a>
             </label>
           </div>
           <div></div>

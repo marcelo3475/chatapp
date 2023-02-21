@@ -5,22 +5,29 @@ import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 
 const Welcome = () => {
-const googleSignIn = () => {
-const provider = new GoogleAuthProvider();
+	const googleSignIn = () => {
+	const provider = new GoogleAuthProvider();
     signInWithRedirect(auth, provider);
 };
 
 return (
-    <div className="welcome">
-        <button className="sign-in">
-        <img
-        onClick={googleSignIn}
-        src={GoogleSignin}
-        alt="sign in with google"
-        type="button"
-        />
-        </button>
-    </div>
+	<main style={{marginTop:"1rem"}}>
+	<link rel="stylesheet"
+        href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    </link>
+
+		<p>Or sign in with Google</p>
+
+		<a href="/#" className="sign-in">
+		<img
+			class='secondary'
+			onClick={googleSignIn}
+			src={GoogleSignin}
+			alt="sign in with google"
+			type="button"
+			/>
+		</a>
+	</main>
     );
 };
 
