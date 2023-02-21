@@ -7,6 +7,33 @@ body > main {
   padding: 1rem 0;
 }
 
+:root {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 0.25rem;
+  --border-width: 1px;
+  --outline-width: 3px;
+  --spacing: 1rem;
+  --typography-spacing-vertical: 1.5rem;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 0.75rem;
+  --form-element-spacing-horizontal: 1rem;
+  --nav-element-spacing-vertical: 1rem;
+  --nav-element-spacing-horizontal: 0.5rem;
+  --nav-link-spacing-vertical: 0.5rem;
+  --nav-link-spacing-horizontal: 0.5rem;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(0.25rem);
+}
+
 article {
   padding: 0;
   overflow: hidden;
@@ -16,6 +43,18 @@ article div {
   padding: 1rem;
 }
 
+.chat-bubble {
+  border-radius: 20px 20px 20px 0;
+  padding: 15px;
+  background-color: #11191f;
+  color: #1c2c4c;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  box-shadow: -2px 2px 1px 1px #1e1e1f8a;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 
 @media (min-width: 576px) {
   body > main {
