@@ -1,15 +1,15 @@
 import "../../src/signin.css";
-import About from "./about";
+import About from "./about.js";
+import Welcome from "./Welcome.js";
 
 const Home = () => {
-
   return (
     <div class="container">
       <link
         rel="stylesheet"
         href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
       ></link>
-      <nav class="container-fluid" style={{marginTop:"-3.5rem"}}>
+      <nav class="container-fluid" style={{ marginTop: "-3.5rem" }}>
         <ul>
           <li>
             <a href="./About" onClick={About}>
@@ -24,17 +24,26 @@ const Home = () => {
             </summary>
             <ul role="listbox">
               <li>
-                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="auto">
+                <a
+                  href="/src/functions/ThemeSwitch.js"
+                  data-theme-switcher="auto"
+                >
                   Auto
                 </a>
               </li>
               <li>
-                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="light">
+                <a
+                  href="/src/functions/ThemeSwitch.js"
+                  data-theme-switcher="light"
+                >
                   Light
                 </a>
               </li>
               <li>
-                <a href="/src/functions/ThemeSwitch.js" data-theme-switcher="dark">
+                <a
+                  href="/src/functions/ThemeSwitch.js"
+                  data-theme-switcher="dark"
+                >
                   Dark
                 </a>
               </li>
@@ -80,17 +89,15 @@ const Home = () => {
                 <br />
 
                 <button
-                  class='outline'
+                  class="outline"
                   type="submit"
                   id="toChatRoom"
                   style={{ marginBottom: "-15px" }}
                 >
                   Login
                 </button>
-
               </fieldset>
             </form>
-
 
             <label style={{ marginBottom: "10px", textAlign: "left" }} for="forgot-password">
               <a href="/#">Forget password?</a>
@@ -98,6 +105,11 @@ const Home = () => {
             <label style={{ marginBottom: "10px", textAlign: "left" }} for="signUp">
               <a href="/#">Sign Up</a>
             </label>
+            <br/>
+            <label>
+              <a href="/#"><Welcome /></a>
+            </label>
+            
           </div>
           <div></div>
         </article>

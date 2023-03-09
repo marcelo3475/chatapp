@@ -1,6 +1,6 @@
 import React from "react";
+import { auth } from "../firebase.js";
 import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
-import { auth } from "../firebase";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 
@@ -11,7 +11,7 @@ const Welcome = () => {
 };
 
 return (
-	<main style={{marginTop:"1rem"}}>
+	<div style={{marginTop:"1rem"}}>
 	<link rel="stylesheet"
         href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     </link>
@@ -27,7 +27,7 @@ return (
 			type="button"
 			/>
 		</a>
-	</main>
+	</div>
     );
 };
 

@@ -1,19 +1,13 @@
 import React from "react";
-import {auth} from "../firebase"
-import {useAuthState} from "react-firebase-hooks/auth"
-import { useState, useRef } from "react";
+import {  auth  } from "../firebase.js"
+import {  useAuthState  } from "react-firebase-hooks/auth/dist/index.esm.js"
+//import { useState, useRef } from "react";
 import "../signin.css"
 
 
 
 const Message = ({message}) => {
-  const [messagesReceived, setMessagesReceived] = useState([])
-  const messagesColumnRef = useRef(null)
   const [user] = useAuthState(auth)
-
-
-
-
 
   return (
     <div

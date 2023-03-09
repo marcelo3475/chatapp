@@ -1,5 +1,5 @@
 import React, { useState  } from "react";
-import {auth, db} from "../firebase"
+import {auth, db} from "../firebase.js"
 import {addDoc, collection, serverTimestamp} from "firebase/firestore"
 
 
@@ -25,27 +25,28 @@ const SendMessage = ({scroll})=> {
   scroll.current.scroll({behavior:"smooth"})
 }
   return (
-    <form onSubmit={(event) => sendMessage(event)} className="send-message">
+    
 
-      <label htmlFor="messageInput" hidden>
-      Enter Message
-      </label>
+    <form onSubmit={(event) => sendMessage(event)}  class='send-message'>
 
-      <div class="container-fluid">
+        <label htmlFor="messageInput" hidden>
+        Enter Message
+        </label>
 
-      <input
-      id="messageInput"
-      name="messageInput"
-      type="text"
-      className="form-input__input"
-      placeholder="type message..."
-      value={message}
-      onChange={(e)=> setMessage(e.target.value)}
-      />
-      <button href="/#" type="submit">
-        Send</button>
+        <input
+        id="messageInput"
+        name="messageInput"
+        type="text"
+        className="form-input__input"
+        placeholder="type message..."
+        value={message}
+        onChange={(e)=> setMessage(e.target.value)}
+        style={{color:"gray", width:'85%'}}
+        />
+        <button href="/#" type="submit" style={{width:"14%", float:'right'}} class='outline'
+        ><img src="../img/sendicoS.png" alt="sendLogo"></img></button>
 
-      </div>
+
     </form>
   )
 }

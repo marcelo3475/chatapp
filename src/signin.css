@@ -17,18 +17,57 @@ article div {
   padding: 1rem;
 }
 
+button,
+input {
+  cursor: pointer;
+}
+
+
 .chat-bubble {
-  border-radius: 20px 20px 20px 0;
+  border-radius: 0 0 0 0;
   padding: 15px;
   background-color: #11191f;
   color: #1c2c4c;
   width: max-content;
   max-width: calc(100% - 50px);
   box-shadow: -2px 2px 1px 1px #1e1e1f8a;
-  display: flex;
+  display: block;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
+
+.chat-bubble.right {
+  margin-left: auto;
+  border-radius: 1rem 0 1rem 0;
+  background-color: #11191f;
+  box-shadow: rem 0.5rem #1b1e1f;
+}
+.chat-bubble__left {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #6b7485;
+}
+.user-message {
+  word-break: break-all;
+}
+.message-time {
+  display: block;
+  text-align: right;
+}
+
+/* send message */
+.send-message {
+  background-color: #11191f;
+}
+
 
 @media (min-width: 576px) {
   body > main {
@@ -44,6 +83,7 @@ article div {
   body > main {
     padding: 1.5rem 0;
   }
+
 
   article div {
     padding: 1.5rem;
